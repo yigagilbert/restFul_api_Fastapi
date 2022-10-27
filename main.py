@@ -17,17 +17,17 @@ from sklearn.naive_bayes import MultinomialNB
 import joblib
 
 class Symptoms(BaseModel):
-    sepal_length: string
-    sepal_width: string
-    petal_length: string
-    petal_width: string
+    sepal_length: str("")
+    sepal_width: str("")
+    petal_length: str("")
+    petal_width: str("")
         
 # Load model
-model = keras.models.load_model('iris_model')
+final_svm_model = joblib.load('model/svm_model.joblib')
 
 # Load input scaling parameters
-with open('scaling.json') as f:
-    s = json.load(f)
+# with open('scaling.json') as f:
+#     s = json.load(f)
 
 app = FastAPI()
 
@@ -64,12 +64,7 @@ def predictDisease(symptoms : Symptoms):
 	# into suitable format for model predictions
     input_data = np.array(input_data).reshape(1,-1)
 	
-    # load modal
-
-    final_svm_model = joblib.load('model/svm_model.joblib')
 	# generating individual outputs
-	# rf_prediction = data_dict["predictions_classes"][final_rf_model.predict(input_data)[0]]
-	# nb_prediction = data_dict["predictions_classes"][final_nb_model.predict(input_data)[0]]
     svm_prediction = data_dict["predictions_classes"][final_svm_model.predict(input_data)[0]]
 	
 	# making final prediction by taking mode of all predictions
