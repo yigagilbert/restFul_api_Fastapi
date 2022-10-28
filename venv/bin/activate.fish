@@ -30,7 +30,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/google/Documents/A_rest_ful_api_flask/venv"
+set -gx VIRTUAL_ENV "/home/google/Documents/restFul_api_Fastapi/venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

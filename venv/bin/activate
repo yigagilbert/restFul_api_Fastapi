@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/google/Documents/A_rest_ful_api_flask/venv"
+VIRTUAL_ENV="/home/google/Documents/restFul_api_Fastapi/venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
