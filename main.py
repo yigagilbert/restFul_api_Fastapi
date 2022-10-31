@@ -94,9 +94,9 @@ def predictDisease(symptoms):
 app = FastAPI()
 
 @app.get("/predict")
-async def predictDiseases():
+async def predictDiseases(smy):
 
-    results = predictDisease("Itching,Skin Rash,Nodal Skin Eruptions")
+    results = predictDisease(smy)#("Itching,Skin Rash,Nodal Skin Eruptions")
 
     return results
 
